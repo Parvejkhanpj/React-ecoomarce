@@ -1,5 +1,6 @@
 import React from "react";
 import { BsCartCheck, BsFillPersonFill, BsSearch } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -26,9 +27,17 @@ export default function Navbar() {
 
       <nav>
         <ul>
-          <li>Home</li>
-          <li>Products</li>
-          <li>Login</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/product">Product</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/prime">Prime</Link>
+          </li>
         </ul>
       </nav>
 
@@ -37,13 +46,13 @@ export default function Navbar() {
         className="icon--title
       "
       >
-        <BsCartCheck /> Cart
+        <BsCartCheck /> <Link to="/Cart">Cart</Link>
       </p>
       <p
         className="icon--title
       "
       >
-        <BsFillPersonFill /> Login
+        <BsFillPersonFill /> <Link to="/login">Login</Link>
       </p>
     </div>
   );
